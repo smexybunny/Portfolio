@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;600&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(33, 33, 33);
+    font-family: 'Roboto Slab', serif;
+    background-color: pink;
+    width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2em;
+    width: 100vw;
+    position: absolute;
+    /*to prevent jumping after setting to fixed */
+    z-index: 10;
+}
+
+/* by making a tag a block, the whole div becomes clickable  */
+
+nav a {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: white;
+}
+
+nav div:hover a, nav div.selected a {
+    color: palevioletred;
+}
+
+nav div {
+    padding: 10px 0;
+    flex-grow: 1;
+    text-align: center;
+    background-color: palevioletred;
+    cursor: pointer;
+    transition: background-color 0.4s ease-out;
+}
+
+nav div:hover, nav div.selected {
+    background-color: white;
+    color: palevioletred;
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+}
+
+div, section {
+    box-sizing: border-box;
+}
+
+figcaption {
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 3.3em;
+    margin: 0;
+    color: white;
+}
+
+p {
+    margin-bottom: 70px;
+}
+
+section.white a, section.white a:visited {
+    color: palevioletred;
+    font-weight: bold;
+}
+
+footer a, footer a:visited {
+    color: white;
+}
+
+section {
+    margin: 20px;
+}
+
+.intro img {
+    /* only use FLOAT for wrapping text anround an image */
+    float: left;
+    width: 40%;
+    margin-right: 20px;
+}
+
+section.white {
+    padding: 18px 54px;
+    font-size: 1.3em;
+    line-height: 1.8em;
+    margin-bottom: 220px;
+    padding-bottom: 80px;
+    background-color: white;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+section.blue {
+    margin-top: 200px;
+    /* needed for scrollintoview */
+    padding-top: 60px;
+    background-color: transparent;
+}
+
+section.links {
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+
+section.links ul {
+    padding-left: 0;
+}
+
+img {
+    width: 100%;
+}
+
+section img {
+    transition: all 0.8s;
+    transition-delay: 0.3s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.fadeIn {
+    opacity: 1;
+    transform: none;
+}
+
+header {
+    text-align: center;
+    height: 80vh;
+    padding: 20px;
+    /* flex for vertical centering of h1 element */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background image */
+    background-image: url(../images/alankay.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+footer {
+    background-color: palevioletred;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    min-height: 220px;
+    display: block;
+    overflow: hidden;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+}
+
+.socials div {
+    padding: 22px;
+}
+
+@media screen and (max-width: 550px) {
+    nav.sticky {
+        position: relative;
+    }
+    .intro {
+        display: block;
+    }
+    .intro img {
+        width: 100%;
+        float: none;
+    }
+    section h2 {
+        font-size: 2em;
+    }
+    section.white {
+        padding: 30px;
+        font-size: 1em;
+        margin-bottom: 120px;
+    }
+    section.blue {
+        margin-top: 100px;
+    }
+    nav {
+        display: block;
+        position: initial;
+    }
+    header {
+        font-size: 0.6em;
+        height: 50vh;
+    }
+    .socials {
+        display: block;
+    }
+}
+
+/* dark color scheme */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: pink;
+    }
+}
